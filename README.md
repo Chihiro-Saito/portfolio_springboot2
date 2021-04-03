@@ -22,27 +22,32 @@ Javaを学び初めた人向けに、Spring MVC・Spring Data JPA・Spring Secur
 
 ## Setup
 1. Eclipseで「Springスターター・プロジェクト」を以下のように設定し、作成します。<br>
-|画面|項目|設定値|
-|新規Spring スターター・プロジェクト|型|Maven|
-|新規Spring スターター・プロジェクト|Javaバージョン|11|
-|New Spring Starter Project Dependencies|Spring Boot Version|2.4.3|
-|New Spring Starter Project Dependencies|選択済み|Spring Boot Devtools|
-|New Spring Starter Project Dependencies|選択済み|Spring Data JPA|
-|New Spring Starter Project Dependencies|選択済み|Thymeleaf|
-|New Spring Starter Project Dependencies|選択済み|Spring Web|
-|New Spring Starter Project Dependencies|選択済み|Spring Reactive Web|
-|New Spring Starter Project Dependencies|選択済み|Spring Web Service|
-|New Spring Starter Project Dependencies|選択済み|Jersey|
-|New Spring Starter Project Dependencies|選択済み|Vaadin|
+
+| 画面 | 項目 | 設定値 |
+| ------------- | ------------- | ------------- |
+| 新規Spring スターター・プロジェクト | 型| Maven |
+| 新規Spring スターター・プロジェクト | Javaバージョン | 11 |
+| New Spring Starter Project Dependencies | Spring Boot Version | 2.4.3 |
+| New Spring Starter Project Dependencies | 選択済み | Spring Boot Devtools |
+| New Spring Starter Project Dependencies | 選択済み | Spring Data JPA |
+| New Spring Starter Project Dependencies | 選択済み | Thymeleaf |
+| New Spring Starter Project Dependencies | 選択済み | Spring Web |
+| New Spring Starter Project Dependencies | 選択済み | Spring Reactive Web |
+| New Spring Starter Project Dependencies | 選択済み | Spring Web Service |
+| New Spring Starter Project Dependencies | 選択済み | Jersey |
+| New Spring Starter Project Dependencies | 選択済み | Vaadin |
+
 2. repositoryをcloneします。<br>
 ``$ git clone https://github.com/Chihiro-Saito/portfolio_springboot2.git``
 3. プロジェクトをクリーンします。
 4. application.propertiesをご利用のデータベース情報に変更します。<br>
 ``/portfolio_springboot2/src/main/resources/application.properties``<br>
-|項目|設定値|
-|spring.datasource.url|データベースの接続URL|
-|spring.datasource.username|データベースの接続ユーザー|
-|spring.datasource.password|接続ユーザーのパスワード|
+
+| 項目 | 設定値 |
+| ------------- | ------------- |
+| spring.datasource.url | データベースの接続URL |
+| spring.datasource.username | データベースの接続ユーザー |
+| spring.datasource.password | 接続ユーザーのパスワード |
 5. Eclipseの右下のビルド表示が消えたら、プロジェクトが実行できるか、確認します。
 5-1. プロジェクト・エクスプローラーから以下のファイルを探します。<br>
 ``/portfolio_springboot2/src/main/java/com/portfolio/PortfolioApplication.java``<br>
@@ -51,12 +56,14 @@ Javaを学び初めた人向けに、Spring MVC・Spring Data JPA・Spring Secur
 ``http://localhost:8080/usermaster/index``
 2. 「新規作成」ボタンをクリックします。
 3. ユーザー情報に以下の内容を入力し、「作成」ボタンをクリックします。<br>
-|項目|設定値|
-|ID|ユーザーID|
-|名前|ユーザーの名前|
-|パスワード|ユーザーのパスワード|
-|ロール|EDIT|
-|有効フラグ|true|
+
+| 項目 | 設定値 |
+| ------------- | ------------- |
+| ID | ユーザーID |
+| 名前 | ユーザーの名前 |
+| パスワード | ユーザーのパスワード |
+| ロール | EDIT |
+| 有効フラグ | true |
 
 ## Usage
 1. 以下のURLにアクセスし、ログイン画面が表示されます。<br>
@@ -70,5 +77,5 @@ This software is released under the MIT License, see LICENSE.
 Chihiro.Saito
 
 ## Reference
-[Spring ドキュメント](https://spring.pleiades.io/)
+[Spring ドキュメント](https://spring.pleiades.io/)<br>
 [Bootstrap5設置ガイド](https://bootstrap-guide.com/outline)
