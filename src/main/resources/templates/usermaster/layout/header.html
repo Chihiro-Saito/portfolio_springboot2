@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>header</title>
+</head>
+<body>
+    <!--/* (1) */-->
+    <div th:fragment="header" th:remove="tag">
+        <div class="heder-area">
+            <div class="heder-menu">
+                <div class="logo-link">
+                    <h3>
+                        <a th:href="@{/}">User Management System</a>
+                    </h3>
+                </div>
+
+                <div class="logout-link">
+                    <a sec:authorize="isAuthenticated()"
+                        th:href="@{/usermaster/logout}" class="logout-link">ログアウト</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

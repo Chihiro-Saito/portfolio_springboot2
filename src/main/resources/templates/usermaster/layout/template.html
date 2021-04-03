@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html class="no-js" xmlns:th="http://www.thymeleaf.org"
+    th:fragment="layout (title,body)">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="/css/bootstrap-5.0.0-beta2/bootstrap.css"
+    id="bootstrap-css" />
+<script src="/js/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="/js/bootstrap-5.0.0-beta2/bootstrap.js"></script>
+<link rel="stylesheet" href="/css/usermaster/stylesheet.css" />
+<!--/* title差し替え用 */-->
+<title th:replace="${title}">User Management System</title>
+</head>
+<body>
+    <!--/* header差し替え用 */-->
+    <div id="header" th:replace="~{usermaster/layout/header :: header}"></div>
+    <!--/* body差し替え用 */-->
+    <div id="body" th:replace="${body}"></div>
+    <!--/* footer差し替え用 */-->
+    <div id="footer" th:replace="~{usermaster/layout/footer :: footer}"></div>
+</body>
+</html>

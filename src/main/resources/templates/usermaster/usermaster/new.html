@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{usermaster/layout/template :: layout(~{::title},~{::body/content()})}">
+<head>
+<title>New User</title>
+</head>
+<body>
+    <div class="container body-container">
+        <h1>New User</h1>
+        <form th:action="@{/usermaster/create}" th:method="post"
+            th:object="${userCreateForm}">
+            <table class="table user-container">
+                <tr>
+                    <th>ID</th>
+                    <td><input type="text" class="form-control" name="id"
+                        th:field="*{id}" /> <span th:if="${#fields.hasErrors('id')}"
+                        th:errors="*{id}">Error</span></td>
+                </tr>
+                <tr>
+                    <th>名前</th>
+                    <td><input type="text" class="form-control" name="name"
+                        th:field="*{name}" /> <span th:if="${#fields.hasErrors('name')}"
+                        th:errors="*{name}"></span></td>
+                </tr>
+                <tr>
+                    <th>パスワード</th>
+                    <td><input type="password" class="form-control"
+                        name="password" th:field="*{password}" /> <span
+                        th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>ロール</th>
+                    <td><select class="form-control" name="role">
+                            <option th:each="item : *{getRoleItems()}"
+                                th:value="${item.value}" th:text="${item.key}"
+                                th:selected="${item.value} == *{role}">pulldown</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <th>有効フラグ</th>
+                    <td>
+                        <div th:each="item : *{getEnabledItems()}"
+                            class="form-check-inline">
+                            <input type="radio" class="form-check-input"
+                                th:value="${item.value}" th:text="${item.key}"
+                                th:field="*{enabled}">
+                        </div>
+                    </td>
+                </tr>
+                <caption>
+                    <span class="d-flex justify-content-between">
+                        <button type="submit" class="btn btn-outline-dark">作成</button> <a
+                        class="btn btn-outline-dark" href="/usermaster/index">一覧画面へ</a>
+                    </span>
+                </caption>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

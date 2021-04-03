@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{usermaster/layout/template :: layout(~{::title},~{::body/content()})}">
+<head>
+<title>TOP Page</title>
+</head>
+<body>
+    <div class="container body-container">
+        <h1>Listing Users</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>名前</th>
+                    <th>ロール</th>
+                    <th>有効フラグ</th>
+                    <th></th>
+                    <th sec:authorize="hasAuthority('EDIT')"></th>
+                    <th sec:authorize="hasAuthority('EDIT')"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="user:${users}" th:object="${user}">
+                    <td th:text="*{id}"></td>
+                    <td th:text="*{name}"></td>
+                    <td th:text="*{role}"></td>
+                    <td th:text="*{enabled}"></td>
+                    <td><a class="btn btn-default btn-xs"
+                        th:href="@{/usermaster/show/{id}(id=*{id})}">参照</a></td>
+                    <td sec:authorize="hasAuthority('EDIT')"><a
+                        class="btn btn-default btn-xs"
+                        th:href="@{/usermaster/edit/{id}(id=*{id})}">編集</a></td>
+                    <td sec:authorize="hasAuthority('EDIT')">
+                        <form th:action="@{/usermaster/delete/{id}(id=*{id})}"
+                            th:method="post">
+                            <input type="submit" class="btn btn-default btn-xs" value="削除" />
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a class="btn btn-outline-dark" href="/usermaster/new">新規作成</a>
+    </div>
+</body>
+</html>
