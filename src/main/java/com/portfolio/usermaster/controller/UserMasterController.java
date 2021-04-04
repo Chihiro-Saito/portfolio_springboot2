@@ -36,7 +36,7 @@ public class UserMasterController {
     /**
      * Redirect用一覧画面パス.
      */
-    private final String REDIRECT_INDE_URL = "redirect:/usermaster/index";
+    private final String REDIRECT_INDEX_URL = "redirect:/usermaster/index";
 
 
     /**
@@ -127,7 +127,7 @@ public class UserMasterController {
         // ユーザー情報を保存
         userService.save(user);
 
-        return REDIRECT_INDE_URL;
+        return REDIRECT_INDEX_URL;
     }
 
     /**
@@ -153,11 +153,11 @@ public class UserMasterController {
         // ユーザー情報を保存
         userService.save(user);
 
-        return REDIRECT_INDE_URL;
+        return REDIRECT_INDEX_URL;
     }
 
     /**
-     * ユーザーの更新処理.
+     * ユーザーの削除処理.
      * @param id ユーザーID
      * @param model
      * @return TopページのURL
@@ -165,7 +165,7 @@ public class UserMasterController {
     @PostMapping("delete/{id}")
     public String destroy(@PathVariable String id) {
         userService.delete(id);
-        return REDIRECT_INDE_URL;
+        return REDIRECT_INDEX_URL;
     }
 
 }
