@@ -8,27 +8,33 @@
     <div class="container body-container">
         <h1>Show User</h1>
         <table class="table user-container">
-            <tr>
-                <th>ID</th>
-                <td th:text="*{user.id}"></td>
-            </tr>
-            <tr>
-                <th>名前</th>
-                <td th:text="*{user.name}"></td>
-            </tr>
-            <tr>
-                <th>ロール</th>
-                <td th:text="*{user.role}"></td>
-            </tr>
-            <tr>
-                <th>有効フラグ</th>
-                <td th:text="*{user.enabled}"></td>
-            </tr>
-            <caption>
-                <span class="d-flex justify-content-end"> <a
-                    class="btn btn-outline-dark" href="/usermaster/index">一覧画面へ</a>
-                </span>
-            </caption>
+            <tbody>
+                <tr>
+                    <th>ID</th>
+                    <td th:text="*{user.id}"></td>
+                </tr>
+                <tr>
+                    <th>名前</th>
+                    <td th:text="*{user.name}"></td>
+                </tr>
+                <tr>
+                    <th>ロール</th>
+                    <td th:text="*{user.role}"></td>
+                </tr>
+                <tr>
+                    <th>有効フラグ</th>
+                    <td th:text="*{user.enabled}"></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">
+                        <span class="d-flex justify-content-end">
+                            <a class="btn btn-outline-dark" th:href="@{/usermaster/index}">一覧画面へ</a>
+                        </span>
+                    <td>
+                </tr>
+            <tfoot>
         </table>
     </div>
 </body>

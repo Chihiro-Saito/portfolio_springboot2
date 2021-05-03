@@ -48,12 +48,16 @@
                         </div>
                     </td>
                 </tr>
-                <caption>
-                    <span class="d-flex justify-content-between">
-                        <button type="submit" class="btn btn-outline-dark">作成</button> <a
-                        class="btn btn-outline-dark" href="/usermaster/index">一覧画面へ</a>
-                    </span>
-                </caption>
+                <tfoot>
+                    <tr>
+                        <td colspan="2">
+                            <span class="d-flex justify-content-between">
+                                <button type="submit" class="btn btn-outline-dark">作成</button> <a
+                                class="btn btn-outline-dark" th:href="@{/usermaster/index}">一覧画面へ</a>
+                            </span>
+                        <td>
+                    </tr>
+                <tfoot>
             </table>
         </form>
     </div>
