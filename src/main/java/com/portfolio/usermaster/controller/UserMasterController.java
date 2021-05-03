@@ -2,13 +2,13 @@ package com.portfolio.usermaster.controller;
 
 import java.util.List;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -73,8 +73,7 @@ public class UserMasterController {
      * @return ユーザー新規登録画面のテンプレートパス
      */
     @GetMapping("new")
-    public String newUser(UserCreateForm userCreateForm, Model model) {
-        model.addAttribute("userCreateForm", userCreateForm);
+    public String newUser(@ModelAttribute UserCreateForm userCreateForm, Model model) {
         return NEW_TEMPLATE_PATH;
     }
 
@@ -113,7 +112,7 @@ public class UserMasterController {
      * @return 遷移先パス(エラーの場合、新規登録画面のテンプレートパス。成功の場合、Topページ)
      */
     @PostMapping("create")
-    public String create(@Valid UserCreateForm userCreateForm,
+    public String create(@Validated @ModelAttribute UserCreateForm userCreateForm,
             final BindingResult bindingResult, Model model) {
 
         // 入力チェック
@@ -139,7 +138,7 @@ public class UserMasterController {
      * @return 遷移先パス(エラーの場合、編集画面のテンプレートパス。成功の場合、Topページ)
      */
     @PostMapping("update/{id}")
-    public String update(@PathVariable String id, @Valid UserUpdateForm userUpdateForm,
+    public String update(@PathVariable String id, @Validated @ModelAttribute UserUpdateForm userUpdateForm,
             final BindingResult bindingResult, Model model) {
 
         // 入力チェック
