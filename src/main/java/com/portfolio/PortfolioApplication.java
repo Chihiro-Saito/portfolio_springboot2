@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 /**
  * Spring Bootに同梱されたTomcatを起動するクラス.
+ *
  */
 @SpringBootApplication
 @EnableJpaRepositories
